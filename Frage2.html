@@ -1,0 +1,48 @@
+<!DOCTYPE html>>
+<head>
+    <meta charset="UTF-8">
+    <title>Rätsel – Frage 2</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 40px; background: #f0f0f0; }
+        .box { background: white; padding: 30px; border-radius: 10px; max-width: 600px; margin: auto; }
+        input, button, select { padding: 10px; font-size: 18px; width: 100%; margin-top: 10px; }
+        button { background: #4285F4; color: white; border: none; cursor: pointer; border-radius: 8px; }
+        button:hover { background: #2a64c5; }
+        .error { color: red; display: none; margin-top: 10px; }
+    </style>
+</head>
+<body>
+
+<div class="box">
+    <h2>🧩 Firmenrätsel</h2>
+
+    <p><b>Frage 2:</b> Warum ist "wir wissen warum wir etwas tun" wichtig?</p>
+
+    <select id="answer">
+        <option value="">Bitte auswählen…</option>
+        <option>Aufgaben blind ausführen</option>
+        <option>Verständnis für Prozesse erhöht Motivation und Qualität</option>
+        <option>Nur Anweisungen befolgen</option>
+        <option>Hinterfragen vermeiden</option>
+    </select>
+
+    <button onclick="checkAnswer()">Weiter</button>
+
+    <div id="error" class="error">Falsche Antwort – bitte nochmal versuchen!</div>
+</div>
+
+<script>
+function checkAnswer() {
+    const solution = "Verständnis für Prozesse erhöht Motivation und Qualität";
+    const answer = document.getElementById("answer").value.trim();
+
+    if (answer === solution) {
+        window.location.href = "Frage3.html"; 
+    } else {
+        document.getElementById("error").style.display = "block";
+    }
+}
+</script>
+
+</body>
+</html>
